@@ -5,9 +5,8 @@ MAINTAINER Stefan Naewe <stefan.naewe@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y -q build-essential ruby1.9.3 python2.7 ruby-bundler libicu-dev libreadline-dev libssl-dev zlib1g-dev git-core
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y -q build-essential python2.7 bundler libicu-dev libreadline-dev libssl-dev zlib1g-dev git-core ruby1.9.3
 RUN apt-get clean
 RUN rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
